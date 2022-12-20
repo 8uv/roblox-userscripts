@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Set Favourites
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  catalog end of favourites script
 // @author       9n25
 // @match        https://www.roblox.com/catalog/*/*
@@ -49,7 +49,7 @@ window.addEventListener("load", () => {
             remove.addEventListener("click", () => {
                 let cookie = stored
                 cookie.splice(stored[i], 1)
-                localStorage.setItem('favourites', cookie)
+                localStorage.setItem('favourites', JSON.stringify(cookie))
                 location.reload()
             })
         }
